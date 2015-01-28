@@ -151,6 +151,6 @@ Sails JS will insert the file UserController.js under *api/controllers* with tha
 Start the Sails JS application. The following url will now be available:
 
 1. localhost:1337/user/list 
-2. localhost:1337/user/add?name=*<name>*&username=*<usenname>*&password=*<password>*
+2. localhost:1337/user/add?name=<name>&username=<usenname>&password=<password>
 
 
