@@ -50,7 +50,7 @@ module.exports = {
 }
 ```
 
-The code will be accessible through the url */User/List*.
+The code will be accessible through the url http://localhost:1337/User/List.
 
 ##MSSQL Adapter
 
@@ -76,10 +76,10 @@ Configure the database connection in *config/connections.js*
 Creating the model is easy, simply use the generator:
 
 ```javascript
-	> sails generate model Driver 
+	> sails generate model User 
 ```
 
-This will create a file *Driver.js* under *api/Models*. Add the fields under the attribute object:
+This will create a file *User.js* under *api/Models*. Add the fields under the attribute object:
 
 ```javascript
 module.exports = {
@@ -151,6 +151,6 @@ Sails JS will insert the file UserController.js under *api/controllers* with tha
 Start the Sails JS application. The following url will now be available:
 
 1. localhost:1337/user/list 
-2. localhost:1337/user/add?name=francis&username=fray&password=pwd
+2. localhost:1337/user/add?name=*<name>*&username=*<usenname>*&password=*<password>*
 
 
