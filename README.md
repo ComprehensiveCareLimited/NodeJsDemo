@@ -118,9 +118,7 @@ Sails JS will insert the file UserController.js under *api/controllers* with tha
 
 ```javascript
 
-		add: function(req, res){
-		var driver = {Name: 'Juan'};
-		List: function (req, res){
+	List: function (req, res){
 		var name = req.param("name");
 		User.find({}).exec(function(err, result){
 			return res.json(result);	
@@ -146,7 +144,37 @@ Sails JS will insert the file UserController.js under *api/controllers* with tha
 		}
 	}
 };
-	
+```
+
+Understanding the code above:
+
+```javascript
+
+	List: function (req, res){
+```	
+
+List is the action/method. req is the Request object. Can be use to retrieve the querystring *e.g. req.param("username")*
+for retrieving *?username=somename*. Reference http://sailsjs.org/#/documentation/reference/req
+
+While res is the Respose object. Reference http://sailsjs.org/#/documentation/reference/res
+
+To retieve data from the User table, we use the User object and use the method find, reference : http://sailsjs.org/#/documentation/reference/waterline/models/find.html 
+
+```javascript
+
+		User.find({}).exec(function(err, result){
+		});
+```	
+
+exec method accepts a callback which returns the result in json format.
+
+and to return the result we simply used the *res.json*. notice that the return was within the callback method of the find method. node js is none blocking thus will execute all commands async, however is a callback is used, it will wait until the request is finished.
+
+```javascript
+
+		return res.json(result);
+```	
+
 
 Start the Sails JS application. The following url will now be available:
 
